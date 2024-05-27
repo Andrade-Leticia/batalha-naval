@@ -1,3 +1,6 @@
+import random 
+
+
 tabuleiroComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -28,12 +31,30 @@ print("Jogador, posicione sua frota.")
 def posicaoJogador(x, y):
     tabuleiroEscondidoJogador[x][y] = 1
 
+##### FUNÇÃO ESCOLHA POSIÇÕES COMPUTADOR
+def posicaoComputador(x, y):
+    tabuleiroEscondidoComputador[x][y] = 1
+
 # JOGADOR ESCOLHE SUAS POSIÇÕES:
 for i in range(5):
     jogX = int(input("Escolha uma linha de 0 a 4: "))
     jogY = int(input("Escolha uma coluna de 0 a 9: "))
     posicaoJogador(jogX, jogY)
-
+    # CONFERINDO O TABULEIRO ESCONDIDO DO JOGADOR
+print("tabuleiro escondido do jogador: ")
 for i in range(len(tabuleiroEscondidoJogador)):
     print(tabuleiroEscondidoJogador[i])
+
+#COMPUTADOR RANDOMIZA SUAS POSIÇÕES:
+for i in range(5):
+    compX = random.randint(0, 4)
+    compY = random.randint(0, 9)
+    posicaoComputador(compX, compY)
+    # CONFERINDO O TABULEIRO ESCONDIDO DO COMPUTADOR
+print("tabuleiro escondido do computador: ")
+for i in range(len(tabuleiroEscondidoComputador)):
+    print(tabuleiroEscondidoComputador[i])
+    posicaoJogador(jogX, jogY)
+
+
     
