@@ -1,0 +1,39 @@
+tabuleiroComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+tabuleiroJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+tabuleiroEscondidoComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+tabuleiroEscondidoJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+print("Jogador, posicione sua frota.")
+
+##### FUNÇÃO ESCOLHA POSIÇÕES JOGADOR
+def posicaoJogador(x, y):
+    tabuleiroEscondidoJogador[x][y] = 1
+
+# JOGADOR ESCOLHE SUAS POSIÇÕES:
+for i in range(5):
+    jogX = int(input("Escolha uma linha de 0 a 4: "))
+    jogY = int(input("Escolha uma coluna de 0 a 9: "))
+    posicaoJogador(jogX, jogY)
+
+for i in range(len(tabuleiroEscondidoJogador)):
+    print(tabuleiroEscondidoJogador[i])
+    
