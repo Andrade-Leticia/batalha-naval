@@ -1,56 +1,61 @@
 import random 
 
-################################# criar tabuleiros
-def criar_tabuleiro(linha, coluna):
-    tabuleiro = []
-    for i in range(linha):
-        tabuleiro.append(coluna * [0])
-    return tabuleiro
-
-tabuleiroJogador = criar_tabuleiro(5, 10)
-tabuleiroComputador = criar_tabuleiro(5, 10)
-tabuleiroEscondidoComputador = criar_tabuleiro(5, 10)
-tabuleiroEscondidoJogador = criar_tabuleiro(5, 10)
-
-###############################
-
 def jogar():
+    # Criando tabuleiros:
+    tabuleiroComputador = []
+    tabuleiroJogador = []
+    tabuleiroEscondidoComputador = []
+    tabuleiroEscondidoJogador = []
+
+
+    # Funções para criar os tabuleiros:
+    def criar_tabuleiro_computador(tabuleiroComputador): 
+        for i in range(5):
+            linha= []
+            for j in range(10):
+                linha.append(0)
+            tabuleiroComputador.append(linha)
+        return tabuleiroComputador
+                    
     
-    tabuleiroComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    def criar_tabuleiro_jogador(tabuleiroJogador): 
+        for i in range(5):
+            linha= []
+            for j in range(10):
+                linha.append(0)
+            tabuleiroJogador.append(linha)
+        return tabuleiroJogador
 
-    tabuleiroJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    def criar_tabuleiro_escondido_computador(tabuleiroEscondidoComputador): 
+        for i in range(5):
+            linha = []
+            for j in range(10):
+                linha.append(0)
+            tabuleiroEscondidoComputador.append(linha)
+        return tabuleiroEscondidoComputador    
 
-    tabuleiroEscondidoComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    def criar_tabuleiro_escondido_jogador(tabuleiroEscondidoJogador): 
+            for i in range(5):
+                linha= []
+                for j in range(10):
+                    linha.append(0)
+                tabuleiroEscondidoJogador.append(linha)
+            return tabuleiroEscondidoJogador
 
-    tabuleiroEscondidoJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    # Chamando as funções para criar os tabuleiros:
+    criar_tabuleiro_computador(tabuleiroComputador)
+    criar_tabuleiro_jogador(tabuleiroJogador)
+    criar_tabuleiro_escondido_computador(tabuleiroEscondidoComputador)
+    criar_tabuleiro_escondido_jogador(tabuleiroEscondidoJogador)
 
+    # Início do jogo para o jogador:
     print("Jogador, posicione sua frota.")
 
-    ##### FUNÇÃO ESCOLHA POSIÇÕES JOGADOR
+    ##### FUNÇÃO POSIÇÕES JOGADOR
     def definir_tabuleiro_jogador(x, y):
         tabuleiroEscondidoJogador[x][y] = 1
 
-    ##### FUNÇÃO ESCOLHA POSIÇÕES COMPUTADOR
-    def definir_tabuleiro_computador(x, y):
-        tabuleiroEscondidoComputador[x][y] = 1
-
-    # JOGADOR ESCOLHE SUAS POSIÇÕES:
+     ##### FUNÇÃO ESCOLHA POSIÇÕES JOGADOR:
     def escolher_posicao_jogador(i):
         while i < 5 :
             jogX = int(input("Escolha uma linha de 0 a 4: "))
@@ -61,19 +66,29 @@ def jogar():
             else: 
                 print("você já escoheu essa posição, tente novamente: ")
                 
-
+    # JOGADOR ESCOLHE SUAS POSIÇÕES:
     i = 0 
     escolher_posicao_jogador(i)
 
+    ##### FUNÇÃO POSIÇÕES COMPUTADOR
+    def definir_tabuleiro_computador(x, y):
+        tabuleiroEscondidoComputador[x][y] = 1
+
+    # SÃO RANDOMIZADAS AS POSIÇÕES DO COMPUTADOR
+    for i in range(5):
+        compX = random.randint(0, 4)
+        compY = random.randint(0, 9)
+        definir_tabuleiro_computador(compX, compY)
+
+   
+    print()
     # CONFERINDO O TABULEIRO ESCONDIDO DO JOGADOR
     print("tabuleiro escondido do jogador: ")
     for i in range(len(tabuleiroEscondidoJogador)):
         print(tabuleiroEscondidoJogador[i])
 
-    for i in range(5):
-        compX = random.randint(0, 4)
-        compY = random.randint(0, 9)
-        definir_tabuleiro_computador(compX, compY)
+    print()
+
         # CONFERINDO O TABULEIRO ESCONDIDO DO COMPUTADOR
     print("tabuleiro escondido do computador: ")
     for i in range(len(tabuleiroEscondidoComputador)):
@@ -94,5 +109,6 @@ def jogar():
     printar_matrizes_vazias(tabuleiroComputador, tabuleiroJogador)
 
 
+jogar()
 
         
