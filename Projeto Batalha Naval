@@ -1,4 +1,17 @@
 import random 
+#################################
+def criar_tabuleiro(linha, coluna):
+    tabuleiro = []
+    for i in range(linha):
+        tabuleiro.append(coluna * [0])
+    return tabuleiro
+
+
+tabuleiroJogador = criar_tabuleiro(5, 10)
+tabuleiroComputador = criar_tabuleiro(5, 10)
+tabuleiroEscondidoComputador = criar_tabuleiro(5, 10)
+tabuleiroEscondidoJogador = criar_tabuleiro(5, 10)
+###################################
 
 def jogar():
     # Criando tabuleiros:
