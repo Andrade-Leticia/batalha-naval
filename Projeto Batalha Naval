@@ -75,10 +75,13 @@ def jogar():
         tabuleiroEscondidoComputador[x][y] = 1
 
     # SÃO RANDOMIZADAS AS POSIÇÕES DO COMPUTADOR
-    for i in range(5):
+    i = 0
+    while i < 5:
         compX = random.randint(0, 4)
         compY = random.randint(0, 9)
-        definir_tabuleiro_computador(compX, compY)
+        if tabuleiroEscondidoComputador[compX][compY] == 0:
+            definir_tabuleiro_computador(compX, compY)
+            i+=1
 
    
     print()
