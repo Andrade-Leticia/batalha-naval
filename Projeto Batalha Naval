@@ -1,69 +1,84 @@
 import random 
 
+def jogar():
+    
+    tabuleiroComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-tabuleiroComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    tabuleiroJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-tabuleiroJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    tabuleiroEscondidoComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-tabuleiroEscondidoComputador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    tabuleiroEscondidoJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-tabuleiroEscondidoJogador = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    print("Jogador, posicione sua frota.")
 
-print("Jogador, posicione sua frota.")
+    ##### FUNÇÃO ESCOLHA POSIÇÕES JOGADOR
+    def definir_tabuleiro_jogador(x, y):
+        tabuleiroEscondidoJogador[x][y] = 1
 
-##### FUNÇÃO ESCOLHA POSIÇÕES JOGADOR
-def posicaoJogador(x, y):
-    tabuleiroEscondidoJogador[x][y] = 1
+    ##### FUNÇÃO ESCOLHA POSIÇÕES COMPUTADOR
+    def definir_tabuleiro_computador(x, y):
+        tabuleiroEscondidoComputador[x][y] = 1
 
-##### FUNÇÃO ESCOLHA POSIÇÕES COMPUTADOR
-def posicaoComputador(x, y):
-    tabuleiroEscondidoComputador[x][y] = 1
+    # JOGADOR ESCOLHE SUAS POSIÇÕES:
+    def escolher_posicao_jogador(i):
+        while i < 5 :
+            jogX = int(input("Escolha uma linha de 0 a 4: "))
+            jogY = int(input("Escolha uma coluna de 0 a 9: "))
+            if tabuleiroEscondidoJogador[jogX][jogY] == 0:
+                definir_tabuleiro_jogador(jogX, jogY)
+                i+=1
+            else: 
+                print("você já escoheu essa posição, tente novamente: ")
+                
 
-# JOGADOR ESCOLHE SUAS POSIÇÕES:
-for i in range(5):
-    jogX = int(input("Escolha uma linha de 0 a 4: "))
-    jogY = int(input("Escolha uma coluna de 0 a 9: "))
-    posicaoJogador(jogX, jogY)
-# CONFERINDO O TABULEIRO ESCONDIDO DO JOGADOR
-print("tabuleiro escondido do jogador: ")
-for i in range(len(tabuleiroEscondidoJogador)):
-    print(tabuleiroEscondidoJogador[i])
+    i = 0 
+    escolher_posicao_jogador(i)
 
-for i in range(5):
-    compX = random.randint(0, 4)
-    compY = random.randint(0, 9)
-    posicaoComputador(compX, compY)
-    # CONFERINDO O TABULEIRO ESCONDIDO DO COMPUTADOR
-print("tabuleiro escondido do computador: ")
-for i in range(len(tabuleiroEscondidoComputador)):
-    print(tabuleiroEscondidoComputador[i])
+    # CONFERINDO O TABULEIRO ESCONDIDO DO JOGADOR
+    print("tabuleiro escondido do jogador: ")
+    for i in range(len(tabuleiroEscondidoJogador)):
+        print(tabuleiroEscondidoJogador[i])
 
-print()
+    for i in range(5):
+        compX = random.randint(0, 4)
+        compY = random.randint(0, 9)
+        definir_tabuleiro_computador(compX, compY)
+        # CONFERINDO O TABULEIRO ESCONDIDO DO COMPUTADOR
+    print("tabuleiro escondido do computador: ")
+    for i in range(len(tabuleiroEscondidoComputador)):
+        print(tabuleiroEscondidoComputador[i])
 
-# Função printar os tabuleiros vazios:
-def printar_matrizes_vazias (tabuleiroComputador, tabuleiroJogador):
-    print("Tabuleiro do computador: ")
-    for i in range(len(tabuleiroComputador)):
-        print(tabuleiroComputador[i])
     print()
-    print("Tabuleiro do jogador: ")
-    for i in range(len(tabuleiroJogador)):
-        print(tabuleiroJogador[i])
 
-printar_matrizes_vazias(tabuleiroComputador, tabuleiroJogador)
+    # Função printar os tabuleiros vazios:
+    def printar_matrizes_vazias (tabuleiroComputador, tabuleiroJogador):
+        print("Tabuleiro do computador: ")
+        for i in range(len(tabuleiroComputador)):
+            print(tabuleiroComputador[i])
+        print()
+        print("Tabuleiro do jogador: ")
+        for i in range(len(tabuleiroJogador)):
+            print(tabuleiroJogador[i])
+
+    printar_matrizes_vazias(tabuleiroComputador, tabuleiroJogador)
+
+
+
+        
