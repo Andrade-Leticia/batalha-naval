@@ -19,6 +19,7 @@ def jogar():
     tabuleiroJogador = []
     tabuleiroEscondidoComputador = []
     tabuleiroEscondidoJogador = []
+    PontosComputador = 0
 
 
     # Funções para criar os tabuleiros:
@@ -87,6 +88,53 @@ def jogar():
     def definir_tabuleiro_computador(x, y):
         tabuleiroEscondidoComputador[x][y] = 1
 
+    # Jogada de ataque do Jogador:
+    def ataque_jogador(tabuleiroEscondidoComputador, tabuleiroComputador, pontosJogador):
+        ataqueJogadorX = int(input("Jogador, escolha sua posição de ataque na linha: (linha de 0 a 4))"))
+        ataqueJogadorY = int(input("Jogador, escolha sua posição de ataque na coluna: (coluna de 0 a 9))"))
+        if tabuleiroEscondidoComputador[ataqueJogadorX][ataqueJogadorY] == 1:
+            tabuleiroEscondidoComputador[ataqueJogadorX][ataqueJogadorY] = 0
+            pontosJogador+=1
+            tabuleiroComputador[ataqueJogadorX][ataqueJogadorY] = "A"
+            print("parabéns você derrubou uma embarcação!")
+            print()
+            print(f'''Tabuleiro do computador:
+                    {tabuleiroComputador}
+                        Tabuleiro do jogador: 
+                        {tabuleiroJogador}''')
+            return pontosJogador, tabuleiroEscondidoComputador, tabuleiroComputador
+
+        else:
+            ("mirou mal...")
+            print(f'''Tabuleiro do computador:
+                    {tabuleiroComputador}
+                        Tabuleiro do jogador: 
+                        {tabuleiroJogador}''')
+
+    def ataque_computador(tabuleiroEscondidoJogador,tabuleiroJogador,pontosComputador):
+        ataqueComputadorX = random.randint(0, 4)
+        ataqueComputadorY = random.randint(0, 9)
+        if tabuleiroEscondidoJogador[ataqueComputadorX][ataqueComputadorY] == 1:
+            tabuleiroEscondidoJogador[ataqueComputadorX][ataqueComputadorY] = 0
+            pontosComputador +=1
+            tabuleiroJogador[ataqueComputadorX][ataqueComputadorY] = "A"
+            print("O computador acertou uma de suas embarcações")
+            print(f'''Tabuleiro do computador:
+                    {tabuleiroComputador}
+                        Tabuleiro do jogador: 
+                        {tabuleiroJogador}''')
+            return pontosComputador, tabuleiroEscondidoComputador, tabuleiroComputador
+        
+            
+        else: 
+            ("Escapou por pouco!!")
+            print(f'''Tabuleiro do computador:
+                    {tabuleiroComputador}
+                        Tabuleiro do jogador: 
+                        {tabuleiroJogador}''')
+
+
+
     # SÃO RANDOMIZADAS AS POSIÇÕES DO COMPUTADOR
     i = 0
     while i < 5:
@@ -95,36 +143,35 @@ def jogar():
         if tabuleiroEscondidoComputador[compX][compY] == 0:
             definir_tabuleiro_computador(compX, compY)
             i+=1
+        
 
    
     print()
-    # CONFERINDO O TABULEIRO ESCONDIDO DO JOGADOR
-    print("tabuleiro escondido do jogador: ")
-    for i in range(len(tabuleiroEscondidoJogador)):
-        print(tabuleiroEscondidoJogador[i])
 
-    print()
 
-        # CONFERINDO O TABULEIRO ESCONDIDO DO COMPUTADOR
-    print("tabuleiro escondido do computador: ")
-    for i in range(len(tabuleiroEscondidoComputador)):
-        print(tabuleiroEscondidoComputador[i])
 
-    print()
+    
+    pontosJogador = 0
+    pontosComputador = 0
 
-    # Função printar os tabuleiros vazios:
-    def printar_matrizes_vazias (tabuleiroComputador, tabuleiroJogador):
-        print("Tabuleiro do computador: ")
-        for i in range(len(tabuleiroComputador)):
-            print(tabuleiroComputador[i])
-        print()
-        print("Tabuleiro do jogador: ")
-        for i in range(len(tabuleiroJogador)):
-            print(tabuleiroJogador[i])
+    while True:
+        if pontosJogador == 5:
+            print("Você venceu!")
 
-    printar_matrizes_vazias(tabuleiroComputador, tabuleiroJogador)
+        elif pontosComputador == 5:
+            print("O computador venceu...")
+
+        else:
+            ataque_computador(pontosComputador, tabuleiroJogador, tabuleiroEscondidoJogador)
+            ataque_jogador(pontosJogador, tabuleiroComputador, tabuleiroEscondidoComputador)
+
+       
+
+        # def ataque_computador()
+
+        
+
+
 
 
 jogar()
-
-        
