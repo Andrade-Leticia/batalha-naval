@@ -67,8 +67,10 @@ def jogar():
             compX = random.randint(0, 4)
             compY = random.randint(0, 9)
         if tabuleiroEscondidoComputador[compX][compY] == 0:
-            definir_tabuleiro_computador(compX, compY)
+            tabuleiroEscondidoComputador[compX][compY] = 1
             i+=1
+        
+
          
                 
     ##### FUNÇÃO POSIÇÕES COMPUTADOR
