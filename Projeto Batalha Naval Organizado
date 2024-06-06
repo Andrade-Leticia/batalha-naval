@@ -18,26 +18,26 @@ def jogar():
     def criar_tabuleiro_computador():
         tabuleiroComputador = []
         for i in range(5):
-            tabuleiroComputador.append(9*[0])
+            tabuleiroComputador.append(10*[0])
         return tabuleiroComputador
 
     def criar_tabuleiro_jogador():
         for i in range(5):
             tabuleiroJogador = []
             for i in range(5):
-                tabuleiroJogador.append(9 * [0])
+                tabuleiroJogador.append(10 * [0])
             return tabuleiroJogador
 
     def criar_tabuleiro_escondido_computador():
         tabuleiroEscondidoComputador = []
         for i in range(5):
-            tabuleiroEscondidoComputador.append(9 * [0])
+            tabuleiroEscondidoComputador.append(10 * [0])
         return tabuleiroEscondidoComputador
 
     def criar_tabuleiro_escondido_jogador():
         tabuleiroEscondidoJogador = []
         for i in range(5):
-            tabuleiroEscondidoJogador.append(9 * [0])
+            tabuleiroEscondidoJogador.append(10 * [0])
         return tabuleiroEscondidoJogador
 
     ##### FUNÇÃO POSIÇÕES JOGADOR
@@ -104,13 +104,7 @@ def jogar():
             print(tabuleiroComputador[i])
 
     # Função para conferir se jogo continua:
-    def continuar_jogo(pontosJogador):
-        if pontosJogador == 5:
-            print("Você venceu!")
 
-
-        elif pontosComputador == 5:
-            print("O computador venceu...")
 
     # Chamando as funções para criar os tabuleiros:
     tabuleiroComputador = criar_tabuleiro_computador()
@@ -130,8 +124,8 @@ def jogar():
     escolher_posicao_computador(tabuleiroEscondidoComputador)
 
     printar_tabuleiros_escondidos(tabuleiroEscondidoComputador, tabuleiroEscondidoJogador)
-
-    while pontosJogador < 6 or pontosComputador < 6:
+    
+    while pontosJogador < 6 and pontosComputador < 6:
         #JOGADOR ATACA
         ataqueJogadorL = int(input("Jogador, escolha sua posição de ataque na linha: (linha de 0 a 4))"))
         ataqueJogadorC = int(input("Jogador, escolha sua posição de ataque na coluna: (coluna de 0 a 9))"))
@@ -145,6 +139,7 @@ def jogar():
             printar_tabuleiros(tabuleiroJogador, tabuleiroComputador)
 
         else:
+            tabuleiroComputador[ataqueJogadorL][ataqueJogadorC] = 'E'
             print("mirou mal... Você não acertou nenhuma embarcação nessa jogada...")
             print()
             printar_tabuleiros(tabuleiroJogador, tabuleiroComputador)
@@ -170,8 +165,13 @@ def jogar():
             print()
             printar_tabuleiros(tabuleiroJogador, tabuleiroComputador)
 
-
-        continuar_jogo(pontosJogador)
+        # Conferindo se o jogo continua:
+        if pontosJogador == 5:
+            print("Você venceu!")
+            break
+        elif pontosComputador == 5:
+            print("O computador venceu...")
+            break
 
     jogarNovamente = int(input("Deseja jogar novamente? (1 - Sim, 2- Não)"))
     if jogarNovamente == 1:
