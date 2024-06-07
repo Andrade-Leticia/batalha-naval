@@ -2,6 +2,16 @@ import random
 
 
 def jogar():
+    
+    def mensagem(msg):
+        print('-' * len(msg))
+        print(msg)
+        print('-' * len(msg))
+ 
+    mensagem('BATALHA NAVAL')
+    mensagem('BEM-VINDO AO JOGO!')
+    print()
+
     # Criando tabuleiros:
 
     # variáveis pontuação
@@ -177,7 +187,8 @@ def jogar():
     if jogarNovamente == 1:
         jogar()
     elif jogarNovamente == 2:
-        print("Ok obrigado por jogar ------- Eros Santos, Laura, Letícia")
+        mensagem('OBRIGADO POR JOGAR. ;)') 
+        mensagem('CRÉDITOS: EROS SANTOS; LAURA DAMBROS; LETÍCIA VIEIRA.') 
 
 
 jogar()
