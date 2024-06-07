@@ -3,6 +3,7 @@ import random
 
 def jogar():
     
+############ mensagens iniciais 
     def mensagem(msg):
         print('-' * len(msg))
         print(msg)
@@ -11,6 +12,7 @@ def jogar():
     mensagem('BATALHA NAVAL')
     mensagem('BEM-VINDO AO JOGO!')
     print()
+######### 
 
     # Criando tabuleiros:
 
@@ -18,37 +20,19 @@ def jogar():
     pontosJogador = 0
     pontosComputador = 0
 
-    def criar_tabuleiro(linha, coluna):
-        tabuleiro = []
-        for i in range(linha):
-            tabuleiro.append(coluna * [0])
-        return tabuleiro
-
-    # Funções para criar os tabuleiros:
-    def criar_tabuleiro_computador():
-        tabuleiroComputador = []
-        for i in range(5):
-            tabuleiroComputador.append(10*[0])
-        return tabuleiroComputador
-
-    def criar_tabuleiro_jogador():
-        for i in range(5):
-            tabuleiroJogador = []
-            for i in range(5):
-                tabuleiroJogador.append(10 * [0])
-            return tabuleiroJogador
-
-    def criar_tabuleiro_escondido_computador():
-        tabuleiroEscondidoComputador = []
-        for i in range(5):
-            tabuleiroEscondidoComputador.append(10 * [0])
-        return tabuleiroEscondidoComputador
-
-    def criar_tabuleiro_escondido_jogador():
-        tabuleiroEscondidoJogador = []
-        for i in range(5):
-            tabuleiroEscondidoJogador.append(10 * [0])
-        return tabuleiroEscondidoJogador
+    ##########
+    def criar_tabuleiro(l, c):
+    tabuleiro = []
+    for i in range(l):
+        tabuleiro.append(c * [0])
+    return tabuleiro
+        
+    # Chamando as funções para criar os tabuleiros:    
+    tabuleiroJogador = criar_tabuleiro(5, 10)
+    tabuleiroEscondidoJogador = criar_tabuleiro(5, 10)
+    tabuleiroComputador = criar_tabuleiro(5, 10)
+    tabuleiroEscondidoComputador = criar_tabuleiro(5, 10)
+############### Laura colocou #####
 
     ##### FUNÇÃO POSIÇÕES JOGADOR
     def definir_tabuleiro_jogador(l, c):
