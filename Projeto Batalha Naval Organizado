@@ -44,7 +44,9 @@ def jogar():
         while i < 5:
             jogL = int(input("Escolha uma linha de 0 a 4: "))
             jogC = int(input("Escolha uma coluna de 0 a 9: "))
-            if tabuleiroEscondidoJogador[jogL][jogC] == 0:
+            if (jogL > 4) or (jogC > 9):
+                print('A posição da linha ou da coluna está inválida. Tente novamente!')
+            elif tabuleiroEscondidoJogador[jogL][jogC] == 0:
                 definir_tabuleiro_jogador(jogL, jogC)
                 i += 1
             else:
