@@ -1,7 +1,11 @@
 #BATALHA NAVAL!!!
 
+(〃￣︶￣)人(￣︶￣〃)
 
-https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/b68cf336-826f-455c-82f0-cad9fd498f81
+
+https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/129b2534-b879-4b90-9beb-9bf6c585eccc
+
+
 
 
 Pjbl da disciplina de Raciocínio Algorítmico (RA), 1° Semestre de Ciência da Computação.
@@ -12,11 +16,11 @@ No repositório temos varios arquivos nomeados como "teste", "protótipo", etc q
 
 Para isso, foi necessário implementar ao código as estruturas de repetição "while" e "for", matrizes, listas, funções, comandos condicionais (if, elif, else) e a biblioteca random. O código também é bem "dividido" com comentários para que qualquer pessoa que leia possa entender o que estávamos querendo fazer, depois do código e da lógica de jogo prontos, nós utilizamos do site Fsymbols para usar fontes, desenhos e divisórias para deixar o output do jogo mais interessante
 
-✏ Créditos:
-  Desenvolvido por Eros, Laura e Leticia
 
+⁂LINK DO NOSSO VÍDEO DE EXPLICAÇÃO
+  https://youtu.be/PaOkrAnbqZc?si=HnVbsfIQavQ4s7XN
 
-IMAGENS DE COMO NOSSO JOGO ESTÁ ESTETICAMENTE: 
+📸IMAGENS DE COMO NOSSO JOGO ESTÁ ESTETICAMENTE: 
 
 ![menu](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/db41f12c-9e1f-4e52-88ea-10157a9e98d1)
 
@@ -29,3 +33,5 @@ IMAGENS DE COMO NOSSO JOGO ESTÁ ESTETICAMENTE:
 ![fim de jogo](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/4842444e-20e2-474e-a663-177b2f91f545)
 
 
+✏ Créditos:
+  Desenvolvido por Eros, Laura e Leticia
