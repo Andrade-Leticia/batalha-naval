@@ -179,7 +179,7 @@ escolher_posicao_jogador(tabuleiroEscondidoJogador)
 #### COMPUTADOR ESCOLHE SUAS POSIÇÕES:
 escolher_posicao_computador(tabuleiroEscondidoComputador)
 printar_tabuleiros(tabuleiroJogador, tabuleiroComputador)
-printar_tabuleiros_escondidos(tabuleiroEscondidoComputador)
+
 
 #### LOOP DE JOGO:
 while pontosJogador < 6 and pontosComputador < 6:
