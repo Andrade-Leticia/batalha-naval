@@ -14,3 +14,18 @@ Para isso, foi necessário implementar ao código as estruturas de repetição "
 
 ✏ Créditos:
   Desenvolvido por Eros, Laura e Leticia
+
+
+IMAGENS DE COMO NOSSO JOGO ESTÁ ESTETICAMENTE: 
+
+![menu](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/db41f12c-9e1f-4e52-88ea-10157a9e98d1)
+
+![tabuleiro](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/d91461ca-68b7-4e9d-9421-912fef83ebe8)
+
+![ataque](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/359b88b2-6425-4aa4-a3ee-32a2791a8d54)
+
+![como o ataque é sinalizado](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/29457e18-7f70-4809-8d6a-ea123e5b4b95)
+
+![fim de jogo](https://github.com/Erosquev/BatalhaNaval_Grupo15/assets/166722628/4842444e-20e2-474e-a663-177b2f91f545)
+
+
