@@ -121,7 +121,7 @@ def escolher_posicao_computador(tabuleiroEscondidoComputador):
 
 #### FUNÇÃO DE ATAQUE DO JOGADOR:
 def mudar_tabuleiro_escondido_computador(ataqueJogadorL, ataqueJogadorC, tabuleiroEscondidoComputador):
-    tabuleiroEscondidoComputador[ataqueJogadorL][ataqueJogadorC] = 0
+    tabuleiroEscondidoComputador[ataqueJogadorL][ataqueJogadorC] = "X"
 
 
 #### ATUALIZAR TABULEIRO COMPUTADOR
@@ -131,7 +131,7 @@ def mudar_tabuleiro_computador(ataqueJogadorL, ataqueJogadorC, tabuleiroComputad
 
 #### FUNÇÃO DE ATAQUE DO COMPUTADOR:
 def mudar_tabuleiro_escondido_jogador(tabuleiroEscondidoJogador, ataqueComputadorL, ataqueComputadorC):
-    tabuleiroEscondidoJogador[ataqueComputadorL][ataqueComputadorC] = 0
+    tabuleiroEscondidoJogador[ataqueComputadorL][ataqueComputadorC] = "X"
 
 
 
@@ -139,14 +139,14 @@ def mudar_tabuleiro_escondido_jogador(tabuleiroEscondidoJogador, ataqueComputado
 def mudar_tabuleiro_jogador(tabuleiroJogador, ataqueComputadorL, ataqueComputadorC):
     tabuleiroJogador[ataqueComputadorL][ataqueComputadorC] = "✅"
 
-
+########## FUNÇÃO CRIADA PARA CONFERIR OS TABULEIROS
 def printar_tabuleiros_escondidos(tabuleiroEscondidoComputador):
-    # print("Tabuleiros Escondidos:")
-    # print()
-    # print("Tabuleiro do Jogador Escondido:")
-    # for i in range(5):
-    #    print(tabuleiroEscondidoJogador[i])
-    # print()
+    print("Tabuleiros Escondidos:")
+    print()
+    print("Tabuleiro do Jogador Escondido:")
+    for i in range(5):
+        print(tabuleiroEscondidoJogador[i])
+    print()
     print("Tabuleiro Computador Escondido: ")
     for i in range(5):
         print(tabuleiroEscondidoComputador[i])
@@ -256,7 +256,6 @@ while pontosJogador < 6 and pontosComputador < 6:
             else:
                 tabuleiroJogador[ataqueComputadorL][ataqueComputadorC] = '❌'  #### ERROU
                 mudar_tabuleiro_escondido_jogador(tabuleiroEscondidoJogador, ataqueComputadorL, ataqueComputadorC)
-                mudar_tabuleiro_jogador(tabuleiroJogador, ataqueComputadorL, ataqueComputadorC)
                 mensagem(
                     f"O computador atacou na posição {[ataqueComputadorL]}{[ataqueComputadorC]} e errou. Você escapou por pouco!!")
                 printar_tabuleiros(tabuleiroJogador, tabuleiroComputador)
